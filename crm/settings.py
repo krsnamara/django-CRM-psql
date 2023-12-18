@@ -87,7 +87,8 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgres://django_crm_dennis_ivy_user:c7HQ5lzjDv3h00o9EnN0BhX9moRBCwrq@dpg-cm084kda73kc73c1ug90-a.ohio-postgres.render.com/django_crm_dennis_ivy")
+database_url = os.getenv("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 
 # Password validation
